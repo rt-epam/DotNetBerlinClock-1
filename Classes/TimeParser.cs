@@ -24,7 +24,7 @@ namespace BerlinClock
                 && hours >= 0
                 && hours <= 23)
             {
-                result.Hours = hours;
+                result.Set.Hours(hours);
             }
             else
             {
@@ -37,7 +37,7 @@ namespace BerlinClock
                 && minutes >= 0
                 && minutes < 60)
             {
-                result.Minutes = minutes;
+                result.Set.Minutes(minutes);
             }
             else
             {
@@ -50,7 +50,7 @@ namespace BerlinClock
                 && seconds >= 0
                 && seconds < 60)
             {
-                result.Seconds = seconds;
+                result.Set.Seconds(seconds);
             }
             else
             {
