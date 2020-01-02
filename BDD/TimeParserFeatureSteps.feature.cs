@@ -100,7 +100,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.When("I parse \"9:13:14\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.Then("the hour should be 12", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the hour should be 9", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
  testRunner.And("the minutes should be 13", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15

@@ -31,6 +31,32 @@ namespace BerlinClock
                 throw new ArgumentException(ArgumentExceptionMessage);
             }
 
+            if (timeParts[1].Length > 0
+                && timeParts[1].Length <= 2
+                && int.TryParse(timeParts[1], out int minutes)
+                && minutes >= 0
+                && minutes < 60)
+            {
+                result.Minutes = minutes;
+            }
+            else
+            {
+                throw new ArgumentException(ArgumentExceptionMessage);
+            }
+
+            if (timeParts[2].Length > 0
+                && timeParts[2].Length <= 2
+                && int.TryParse(timeParts[2], out int seconds)
+                && seconds >= 0
+                && seconds < 60)
+            {
+                result.Seconds = seconds;
+            }
+            else
+            {
+                throw new ArgumentException(ArgumentExceptionMessage);
+            }
+
             return result;
         }
     }

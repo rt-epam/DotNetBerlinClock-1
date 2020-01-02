@@ -10,7 +10,7 @@ Scenario: Parse a valid 6 digit time
 
 Scenario: Parse an hour less than 10
 	When I parse "9:13:14"
-	Then the hour should be 12
+	Then the hour should be 9
 	And the minutes should be 13
 	And the seconds should be 14
 

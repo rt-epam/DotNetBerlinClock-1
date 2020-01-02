@@ -9,12 +9,20 @@ namespace BerlinClock.BDD
     {
         private ITimeParser timeParser = new TimeParser();
 
+        private Exception exception;
         private Time result;
 
         [When(@"I parse ""(.*)""")]
         public void WhenIParse(string timeString)
         {
-            result = timeParser.Parse(timeString);
+            try
+            {
+                result = timeParser.Parse(timeString);
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
         }
         
         [Then(@"the hour should be (.*)")]
@@ -38,7 +46,7 @@ namespace BerlinClock.BDD
         [Then(@"exception should be thrown")]
         public void ThenExceptionShouldBeThrown()
         {
-            Assert.IsTrue(typeof(ArgumentException).IsAssignableFrom(ScenarioContext.Current.TestError.GetType()));
+            Assert.IsTrue(typeof(ArgumentException).IsAssignableFrom(exception.GetType()));
         }
     }
 }
