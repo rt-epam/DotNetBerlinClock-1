@@ -1,6 +1,6 @@
 ﻿namespace BerlinClock
 {
-    internal interface ITimeParser
+    public interface ITimeParser
     {
         Time Parse(string timeString);
     }

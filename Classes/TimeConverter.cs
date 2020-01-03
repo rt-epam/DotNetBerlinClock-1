@@ -7,9 +7,20 @@ namespace BerlinClock
 {
     public class TimeConverter : ITimeConverter
     {
-        public string convertTime(string aTime)
+        private readonly ITimeParser timeParser;
+        private readonly IBerlinClockConsoleSerializer consoleSerializer;
+
+        public TimeConverter(ITimeParser timeParser, IBerlinClockConsoleSerializer consoleSerializer)
         {
-            throw new NotImplementedException();
+            this.timeParser = timeParser ?? throw new ArgumentNullException(nameof(timeParser));
+            this.consoleSerializer = consoleSerializer ?? throw new ArgumentNullException(nameof(consoleSerializer));
+        }
+
+        public string convertTime(string timeString)
+        {
+            var time = timeParser.Parse(timeString);
+            var state = new BerlinClockState();
+            return consoleSerializer.Serialize(state);
         }
     }
 }

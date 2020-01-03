@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDD\BerlinClockConsoleSerializerSteps.cs" />
+    <Compile Include="BDD\BerlinClockConsoleSerializerSteps.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BerlinClockConsoleSerializerSteps.feature</DependentUpon>
+    </Compile>
     <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
     <Compile Include="BDD\TimeParserFeatureSteps.cs" />
     <Compile Include="BDD\TimeParserFeatureSteps.feature.cs">
@@ -56,7 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TimeParserFeatureSteps.feature</DependentUpon>
     </Compile>
+    <Compile Include="Classes\BerlinClockConsoleSerializer.cs" />
+    <Compile Include="Classes\BerlinClockState.cs" />
+    <Compile Include="Classes\IBerlinClockConsoleSerializer.cs" />
     <Compile Include="Classes\ITimeParser.cs" />
+    <Compile Include="Classes\LightState.cs" />
     <Compile Include="Classes\Time.cs" />
     <Compile Include="Classes\TimeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,9 +77,14 @@
     </Compile>
     <Compile Include="Classes\ITimeConverter.cs" />
     <Compile Include="Classes\TimeConverter.cs" />
+    <Compile Include="Validation\ValidationError.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BDD\BerlinClockConsoleSerializerSteps.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BerlinClockConsoleSerializerSteps.feature.cs</LastGenOutput>
+    </None>
     <None Include="BDD\TimeParserFeatureSteps.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TimeParserFeatureSteps.feature.cs</LastGenOutput>

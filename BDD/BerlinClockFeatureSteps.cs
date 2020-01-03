@@ -8,9 +8,17 @@ namespace BerlinClock
     [Binding]
     public class TheBerlinClockSteps
     {
-        private ITimeConverter berlinClock = new TimeConverter();
+        private readonly IBerlinClockConsoleSerializer consoleSerializer;
+        private readonly ITimeParser timeParser;
+        private readonly ITimeConverter berlinClock;
         private String theTime;
 
+        public TheBerlinClockSteps()
+        {
+            timeParser = new TimeParser();
+            consoleSerializer = new BerlinClockConsoleSerializer();
+            berlinClock = new TimeConverter(timeParser, consoleSerializer);
+        }
         
         [When(@"the time is ""(.*)""")]
         public void WhenTheTimeIs(string time)
