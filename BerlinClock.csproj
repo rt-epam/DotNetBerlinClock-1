@@ -43,25 +43,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDD\BerlinClockConsoleSerializerSteps.cs" />
-    <Compile Include="BDD\BerlinClockConsoleSerializerSteps.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BerlinClockConsoleSerializerSteps.feature</DependentUpon>
-    </Compile>
-    <Compile Include="BDD\BerlinClockFeatureSteps.cs" />
-    <Compile Include="BDD\TimeParserFeatureSteps.cs" />
-    <Compile Include="BDD\TimeParserFeatureSteps.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TimeParserFeatureSteps.feature</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Clock.cs" />
     <Compile Include="Classes\BerlinClockConsoleSerializer.cs" />
     <Compile Include="Classes\BerlinClockState.cs" />
@@ -71,11 +54,6 @@
     <Compile Include="Classes\Time.cs" />
     <Compile Include="Classes\TimeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BDD\BerlinClockFeatureSteps.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BerlinClockFeatureSteps.feature</DependentUpon>
-    </Compile>
     <Compile Include="Classes\ITimeConverter.cs" />
     <Compile Include="Classes\TimeConverter.cs" />
     <Compile Include="Validation\Errors\ArgumentOutOfRangeError.cs" />
@@ -87,19 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="BDD\BerlinClockConsoleSerializerSteps.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BerlinClockConsoleSerializerSteps.feature.cs</LastGenOutput>
-    </None>
-    <None Include="BDD\TimeParserFeatureSteps.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>TimeParserFeatureSteps.feature.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
-    <None Include="BDD\BerlinClockFeatureSteps.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BerlinClockFeatureSteps.feature.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

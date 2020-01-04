@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace BerlinClock
 {
-    internal class TimeParser : ITimeParser
+    public class TimeParser : ITimeParser
     {
         private const string TimePattern = @"^(?<hours>\d{1,2}):(?<minutes>\d{2}):(?<seconds>\d{2})$";
         private const string IncorrectFormatMessage = "The given string is not a correct time";
