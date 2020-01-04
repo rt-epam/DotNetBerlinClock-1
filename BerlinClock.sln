@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BerlinClock", "BerlinClock.csproj", "{0451204D-BF86-43E1-B560-FC9AC830B9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BerlinClock.IntegrationTests", "..\BerlinClock.IntegrationTests\BerlinClock.IntegrationTests.csproj", "{E5C31792-FB3E-420A-A449-54F1D93E3401}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BerlinClock.IntegrationTests", "BerlinClock.IntegrationTests\BerlinClock.IntegrationTests.csproj", "{E5C31792-FB3E-420A-A449-54F1D93E3401}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
