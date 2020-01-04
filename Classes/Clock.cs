@@ -6,7 +6,7 @@ namespace BerlinClock
     {
         private Clock()
         {
-            State = new BerlinClockState();
+            State = new ClockState();
         }
 
         public static Clock Initialize(Time time)
@@ -26,7 +26,7 @@ namespace BerlinClock
             return clock;
         }
 
-        public BerlinClockState State { get; private set; }
+        public ClockState State { get; private set; }
 
         private static bool IsEven(int number)
         {

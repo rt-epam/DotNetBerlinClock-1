@@ -3,7 +3,7 @@ using System.Text;
 
 namespace BerlinClock
 {
-    public class BerlinClockConsoleSerializer : IBerlinClockConsoleSerializer
+    public class ClockConsoleSerializer : IClockConsoleSerializer
     {
         private const string TurnedOffLightSymbol = "O";
         private const string TopLightColor = "Y";
@@ -12,7 +12,7 @@ namespace BerlinClock
         private const string Line3Colors = "YYRYYRYYRYY";
         private const string Line4Colors = "YYYY";
 
-        public string Serialize(BerlinClockState state)
+        public string Serialize(ClockState state)
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine(state.TopLight == LightState.On ? TopLightColor : TurnedOffLightSymbol);

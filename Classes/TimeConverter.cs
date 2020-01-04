@@ -8,9 +8,9 @@ namespace BerlinClock
     public class TimeConverter : ITimeConverter
     {
         private readonly ITimeParser timeParser;
-        private readonly IBerlinClockConsoleSerializer consoleSerializer;
+        private readonly IClockConsoleSerializer consoleSerializer;
 
-        public TimeConverter(ITimeParser timeParser, IBerlinClockConsoleSerializer consoleSerializer)
+        public TimeConverter(ITimeParser timeParser, IClockConsoleSerializer consoleSerializer)
         {
             this.timeParser = timeParser ?? throw new ArgumentNullException(nameof(timeParser));
             this.consoleSerializer = consoleSerializer ?? throw new ArgumentNullException(nameof(consoleSerializer));

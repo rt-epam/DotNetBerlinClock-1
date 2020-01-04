@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace BerlinClock
 {
-    public class BerlinClockState
+    public class ClockState
     {
         internal const int Line1Length = 4;
         internal const int Line2Length = 4;
         internal const int Line3Length = 11;
         internal const int Line4Length = 4;
 
-        public BerlinClockState()
+        public ClockState()
         {
-            Set = new BerlinClockStateFluentInterface(this);
+            Set = new ClockStateFluentInterface(this);
         }
 
         public LightState TopLight { get; set; }
@@ -21,28 +21,28 @@ namespace BerlinClock
         public List<LightState> Line3 { get; } = new List<LightState>(new LightState[Line3Length]);
         public List<LightState> Line4 { get; } = new List<LightState>(new LightState[Line4Length]);
 
-        public BerlinClockStateFluentInterface Set { get; }
+        public ClockStateFluentInterface Set { get; }
     }
 
-    public class BerlinClockStateFluentInterface
+    public class ClockStateFluentInterface
     {
         private const string IncorrectLineLenghtMessage = "Number of elements is not correct";
-        private readonly BerlinClockState state;
+        private readonly ClockState state;
 
-        public BerlinClockStateFluentInterface(BerlinClockState state)
+        public ClockStateFluentInterface(ClockState state)
         {
             this.state = state;
         }
 
-        public BerlinClockStateFluentInterface TopLight(LightState lightState)
+        public ClockStateFluentInterface TopLight(LightState lightState)
         {
             state.TopLight = lightState;
             return this;
         }
 
-        public BerlinClockStateFluentInterface Line1(List<LightState> line1)
+        public ClockStateFluentInterface Line1(List<LightState> line1)
         {
-            if (line1.Count != BerlinClockState.Line1Length)
+            if (line1.Count != ClockState.Line1Length)
             {
                 throw new ArgumentException(IncorrectLineLenghtMessage);
             }
@@ -53,9 +53,9 @@ namespace BerlinClock
             return this;
         }
 
-        public BerlinClockStateFluentInterface Line2(List<LightState> line2)
+        public ClockStateFluentInterface Line2(List<LightState> line2)
         {
-            if (line2.Count != BerlinClockState.Line2Length)
+            if (line2.Count != ClockState.Line2Length)
             {
                 throw new ArgumentException(IncorrectLineLenghtMessage);
             }
@@ -66,9 +66,9 @@ namespace BerlinClock
             return this;
         }
 
-        public BerlinClockStateFluentInterface Line3(List<LightState> line3)
+        public ClockStateFluentInterface Line3(List<LightState> line3)
         {
-            if (line3.Count != BerlinClockState.Line3Length)
+            if (line3.Count != ClockState.Line3Length)
             {
                 throw new ArgumentException(IncorrectLineLenghtMessage);
             }
@@ -79,9 +79,9 @@ namespace BerlinClock
             return this;
         }
 
-        public BerlinClockStateFluentInterface Line4(List<LightState> line4)
+        public ClockStateFluentInterface Line4(List<LightState> line4)
         {
-            if (line4.Count != BerlinClockState.Line4Length)
+            if (line4.Count != ClockState.Line4Length)
             {
                 throw new ArgumentException(IncorrectLineLenghtMessage);
             }
