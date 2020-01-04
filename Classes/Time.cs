@@ -1,15 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace BerlinClock
+﻿namespace BerlinClock
 {
     public class Time
     {
-        private readonly TimeValidator timeValidator;
-
         public Time()
         {
-            timeValidator = new TimeValidator();
             Set = new TimeFluentInterface(this);
         }
 
@@ -18,25 +12,6 @@ namespace BerlinClock
         public int Seconds { get; set; }
 
         public TimeFluentInterface Set { get; set; }
-
-        public bool IsValid
-        {
-            get
-            {
-                timeValidator.Validate(this);
-                return timeValidator.Errors.Any();
-            }
-        }
-    }
-
-    public class TimeValidator
-    {
-        public IList<ValidationError> Errors { get; } = new List<ValidationError>();
-
-        public void Validate(Time time)
-        {
-
-        }
     }
 
     public class TimeFluentInterface

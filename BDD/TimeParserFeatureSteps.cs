@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using BerlinClock.Validation;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TechTalk.SpecFlow;
 
@@ -7,7 +8,7 @@ namespace BerlinClock.BDD
     [Binding]
     public class TimeParserSteps
     {
-        private ITimeParser timeParser = new TimeParser();
+        private ITimeParser timeParser = new TimeParser(new TimeValidator());
 
         private Exception exception;
         private Time result;

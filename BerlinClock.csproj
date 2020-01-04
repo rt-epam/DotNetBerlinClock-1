@@ -77,7 +77,11 @@
     </Compile>
     <Compile Include="Classes\ITimeConverter.cs" />
     <Compile Include="Classes\TimeConverter.cs" />
-    <Compile Include="Validation\ValidationError.cs" />
+    <Compile Include="Validation\Errors\ArgumentOutOfRangeError.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Validation\TimeValidator.cs" />
+    <Compile Include="Validation\Errors\IValidationError.cs" />
+    <Compile Include="Validation\ValidatorBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

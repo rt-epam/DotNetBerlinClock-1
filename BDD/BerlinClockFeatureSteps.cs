@@ -2,6 +2,7 @@
 using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using BerlinClock.Validation;
 
 namespace BerlinClock
 {
@@ -15,7 +16,7 @@ namespace BerlinClock
 
         public TheBerlinClockSteps()
         {
-            timeParser = new TimeParser();
+            timeParser = new TimeParser(new TimeValidator());
             consoleSerializer = new BerlinClockConsoleSerializer();
             berlinClock = new TimeConverter(timeParser, consoleSerializer);
         }

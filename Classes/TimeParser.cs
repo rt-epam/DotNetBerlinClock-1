@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BerlinClock.Validation;
+using System;
 using System.Text.RegularExpressions;
 
 namespace BerlinClock
@@ -6,8 +7,14 @@ namespace BerlinClock
     internal class TimeParser : ITimeParser
     {
         private const string TimePattern = @"^(?<hours>\d{1,2}):(?<minutes>\d{2}):(?<seconds>\d{2})$";
-
         private const string IncorrectFormatMessage = "The given string is not a correct time";
+
+        private readonly IValidator<Time> timeValidator;
+
+        public TimeParser(IValidator<Time> timeValidator)
+        {
+            this.timeValidator = timeValidator ?? throw new ArgumentNullException(nameof(timeValidator));
+        }
 
         public Time Parse(string timeString)
         {
@@ -20,7 +27,8 @@ namespace BerlinClock
                     .Minutes(int.Parse(match.Groups["minutes"].Value))
                     .Seconds(int.Parse(match.Groups["seconds"].Value));
 
-                if (time.IsValid)
+                timeValidator.Validate(time);
+                if (timeValidator.IsValid)
                 {
                     return time;
                 }
