@@ -40,56 +40,48 @@ namespace BerlinClock
             return this;
         }
 
-        public ClockStateFluentInterface Line1(List<LightState> line1)
+        public ClockStateFluentInterface Line1(List<LightState> lightStates)
         {
-            if (line1.Count != ClockState.Line1Length)
-            {
-                throw new ArgumentException(IncorrectLineLenghtMessage);
-            }
-            for (int i=0; i < line1.Count; i++)
-            {
-                state.Line1[i] = line1[i];
-            }
+            ValidateLength(ClockState.Line1Length, lightStates);
+            SetLineState(state.Line1, lightStates);
             return this;
         }
 
-        public ClockStateFluentInterface Line2(List<LightState> line2)
+        public ClockStateFluentInterface Line2(List<LightState> lightStates)
         {
-            if (line2.Count != ClockState.Line2Length)
-            {
-                throw new ArgumentException(IncorrectLineLenghtMessage);
-            }
-            for (int i = 0; i < line2.Count; i++)
-            {
-                state.Line2[i] = line2[i];
-            }
+            ValidateLength(ClockState.Line2Length, lightStates);
+            SetLineState(state.Line2, lightStates);
             return this;
         }
 
-        public ClockStateFluentInterface Line3(List<LightState> line3)
+        public ClockStateFluentInterface Line3(List<LightState> lightStates)
         {
-            if (line3.Count != ClockState.Line3Length)
-            {
-                throw new ArgumentException(IncorrectLineLenghtMessage);
-            }
-            for (int i = 0; i < line3.Count; i++)
-            {
-                state.Line3[i] = line3[i];
-            }
+            ValidateLength(ClockState.Line3Length, lightStates);
+            SetLineState(state.Line3, lightStates);
             return this;
         }
 
-        public ClockStateFluentInterface Line4(List<LightState> line4)
+        public ClockStateFluentInterface Line4(List<LightState> lightStates)
         {
-            if (line4.Count != ClockState.Line4Length)
+            ValidateLength(ClockState.Line4Length, lightStates);
+            SetLineState(state.Line4, lightStates);
+            return this;
+        }
+
+        private static void ValidateLength(int expectedLenght, List<LightState> lightStates)
+        {
+            if (lightStates.Count != expectedLenght)
             {
                 throw new ArgumentException(IncorrectLineLenghtMessage);
             }
-            for (int i = 0; i < line4.Count; i++)
+        }
+
+        private static void SetLineState(List<LightState> line, List<LightState> lightStates)
+        {
+            for (int i = 0; i < lightStates.Count; i++)
             {
-                state.Line4[i] = line4[i];
+                line[i] = lightStates[i];
             }
-            return this;
         }
     }
 }
