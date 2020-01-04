@@ -13,7 +13,7 @@ namespace BerlinClock
         {
             var clock = new Clock();
             clock.State.Set
-                .TopLight(IsOdd(time.Seconds) ? LightState.Off : LightState.On)
+                .TopLight(TurnOnIf(IsEven(time.Seconds)))
                 .Line1(new List<LightState>() { TurnOnIf(time.Hours >= 5), TurnOnIf(time.Hours >= 10), TurnOnIf(time.Hours >= 15), TurnOnIf(time.Hours >= 20) })
                 .Line2(new List<LightState>() { TurnOnIf(time.Hours % 5 >= 1), TurnOnIf(time.Hours % 5 >= 2), TurnOnIf(time.Hours % 5 >= 3), TurnOnIf(time.Hours % 5 >= 4) })
                 .Line3(new List<LightState>()
@@ -28,9 +28,9 @@ namespace BerlinClock
 
         public BerlinClockState State { get; private set; }
 
-        private static bool IsOdd(int number)
+        private static bool IsEven(int number)
         {
-            return number % 2 == 1;
+            return number % 2 == 0;
         }
 
         private static LightState TurnOnIf(bool condition)
