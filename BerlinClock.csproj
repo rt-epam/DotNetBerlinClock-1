@@ -62,6 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TimeParserFeatureSteps.feature</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Clock.cs" />
     <Compile Include="Classes\BerlinClockConsoleSerializer.cs" />
     <Compile Include="Classes\BerlinClockState.cs" />
     <Compile Include="Classes\IBerlinClockConsoleSerializer.cs" />

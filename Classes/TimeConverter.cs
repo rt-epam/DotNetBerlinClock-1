@@ -19,8 +19,8 @@ namespace BerlinClock
         public string convertTime(string timeString)
         {
             var time = timeParser.Parse(timeString);
-            var state = new BerlinClockState();
-            return consoleSerializer.Serialize(state);
+            var clock = Clock.Initialize(time);
+            return consoleSerializer.Serialize(clock.State);
         }
     }
 }
