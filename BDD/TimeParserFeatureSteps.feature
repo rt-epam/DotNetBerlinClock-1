@@ -32,8 +32,18 @@ Scenario: Throw exception when seconds consist of 3 digits
 	When I parse "9:13:014"
 	Then exception should be thrown
 
-Scenario: Throw exception when hours greater than 23
+Scenario: Throw exception when hours greater than 24
 	When I parse "24:00:00"
+	Then the hour should be 24
+	And the minutes should be 0
+	And the seconds should be 0
+
+Scenario: Throw exception when hours greater than 23 and minutes greater than 0
+	When I parse "24:00:01"
+	Then exception should be thrown
+
+Scenario: Throw exception when hours greater than 23 and hours greater than 0
+	When I parse "24:01:00"
 	Then exception should be thrown
 
 Scenario: Throw exception when minutes greater than 59

@@ -79,6 +79,7 @@
     <Compile Include="Classes\ITimeConverter.cs" />
     <Compile Include="Classes\TimeConverter.cs" />
     <Compile Include="Validation\Errors\ArgumentOutOfRangeError.cs" />
+    <Compile Include="Validation\Errors\InvalidTimeError.cs" />
     <Compile Include="Validation\IValidator.cs" />
     <Compile Include="Validation\TimeValidator.cs" />
     <Compile Include="Validation\Errors\IValidationError.cs" />

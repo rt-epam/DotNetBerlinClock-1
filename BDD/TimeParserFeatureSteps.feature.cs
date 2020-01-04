@@ -178,16 +178,52 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Throw exception when hours greater than 23")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Throw exception when hours greater than 24")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TimeParser")]
-        public virtual void ThrowExceptionWhenHoursGreaterThan23()
+        public virtual void ThrowExceptionWhenHoursGreaterThan24()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throw exception when hours greater than 23", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throw exception when hours greater than 24", ((string[])(null)));
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line 36
  testRunner.When("I parse \"24:00:00\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
+ testRunner.Then("the hour should be 24", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 38
+ testRunner.And("the minutes should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("the seconds should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Throw exception when hours greater than 23 and minutes greater than 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TimeParser")]
+        public virtual void ThrowExceptionWhenHoursGreaterThan23AndMinutesGreaterThan0()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throw exception when hours greater than 23 and minutes greater than 0", ((string[])(null)));
+#line 41
+this.ScenarioSetup(scenarioInfo);
+#line 42
+ testRunner.When("I parse \"24:00:01\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+ testRunner.Then("exception should be thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Throw exception when hours greater than 23 and hours greater than 0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "TimeParser")]
+        public virtual void ThrowExceptionWhenHoursGreaterThan23AndHoursGreaterThan0()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throw exception when hours greater than 23 and hours greater than 0", ((string[])(null)));
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line 46
+ testRunner.When("I parse \"24:01:00\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
  testRunner.Then("exception should be thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -199,11 +235,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ThrowExceptionWhenMinutesGreaterThan59()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throw exception when minutes greater than 59", ((string[])(null)));
-#line 39
+#line 49
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 50
  testRunner.When("I parse \"11:60:00\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 51
  testRunner.Then("exception should be thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -215,11 +251,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ThrowExceptionWhenSecondsGreaterThan59()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throw exception when seconds greater than 59", ((string[])(null)));
-#line 43
+#line 53
  this.ScenarioSetup(scenarioInfo);
-#line 44
+#line 54
  testRunner.When("I parse \"11:23:60\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 45
+#line 55
  testRunner.Then("exception should be thrown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
