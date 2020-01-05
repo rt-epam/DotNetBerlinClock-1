@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Linq;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
 namespace BerlinClock.BDD
@@ -18,15 +17,15 @@ namespace BerlinClock.BDD
             state = new ClockState();
             state.Set
                 .TopLight(LightState.On)
-                .Line1(new System.Collections.Generic.List<LightState>(){ LightState.On, LightState.On, LightState.On, LightState.On })
-                .Line2(new System.Collections.Generic.List<LightState>() { LightState.On, LightState.On, LightState.On, LightState.On })
-                .Line3(new System.Collections.Generic.List<LightState>()
+                .Line1(new List<LightState>(){ LightState.On, LightState.On, LightState.On, LightState.On })
+                .Line2(new List<LightState>() { LightState.On, LightState.On, LightState.On, LightState.On })
+                .Line3(new List<LightState>()
                 {
                     LightState.On, LightState.On, LightState.On, LightState.On,
                     LightState.On, LightState.On, LightState.On, LightState.On,
                     LightState.On, LightState.On, LightState.On
                 })
-                .Line4(new System.Collections.Generic.List<LightState>() { LightState.On, LightState.On, LightState.On, LightState.On });
+                .Line4(new List<LightState>() { LightState.On, LightState.On, LightState.On, LightState.On });
         }
         
         [Given(@"I have all lights turned off")]
@@ -35,15 +34,15 @@ namespace BerlinClock.BDD
             state = new ClockState();
             state.Set
                 .TopLight(LightState.Off)
-                .Line1(new System.Collections.Generic.List<LightState>() { LightState.Off, LightState.Off, LightState.Off, LightState.Off })
-                .Line2(new System.Collections.Generic.List<LightState>() { LightState.Off, LightState.Off, LightState.Off, LightState.Off })
-                .Line3(new System.Collections.Generic.List<LightState>()
+                .Line1(new List<LightState>() { LightState.Off, LightState.Off, LightState.Off, LightState.Off })
+                .Line2(new List<LightState>() { LightState.Off, LightState.Off, LightState.Off, LightState.Off })
+                .Line3(new List<LightState>()
                 {
                     LightState.Off, LightState.Off, LightState.Off, LightState.Off,
                     LightState.Off, LightState.Off, LightState.Off, LightState.Off,
                     LightState.Off, LightState.Off, LightState.Off
                 })
-                .Line4(new System.Collections.Generic.List<LightState>() { LightState.Off, LightState.Off, LightState.Off, LightState.Off });
+                .Line4(new List<LightState>() { LightState.Off, LightState.Off, LightState.Off, LightState.Off });
         }
         
         [When(@"I serialize the state")]
