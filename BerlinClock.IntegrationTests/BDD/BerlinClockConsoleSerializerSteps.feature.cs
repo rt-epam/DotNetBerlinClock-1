@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BerlinClock
+namespace BerlinClock.IntegrationTests.BDD
 {
     using TechTalk.SpecFlow;
     
@@ -49,7 +49,7 @@ namespace BerlinClock
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "BerlinClockConsoleSerializerSteps")))
             {
-                BerlinClock.BerlinClockConsoleSerializerStepsFeature.FeatureSetup(null);
+                BerlinClock.IntegrationTests.BDD.BerlinClockConsoleSerializerStepsFeature.FeatureSetup(null);
             }
         }
         
